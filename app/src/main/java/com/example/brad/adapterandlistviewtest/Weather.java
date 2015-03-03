@@ -3,11 +3,19 @@ package com.example.brad.adapterandlistviewtest;
 
 public class Weather {
 
-    int id;
-    String townName;
-    Double temp;
-    String shortDescription;
+    private int id;
+    private String townName;
+    private int temp;
+    private String shortDescription;
 
+    public Weather(int id, String townName, int temp, String shortDescription) {
+        id = this.id;
+        townName = this.townName;
+        temp = this.temp;
+        shortDescription = this.shortDescription;
+
+
+    }
     public int getId() {
         return id;
     }
@@ -24,11 +32,11 @@ public class Weather {
         this.townName = townName;
     }
 
-    public Double getTemp() {
+    public int getTemp() {
         return temp;
     }
 
-    public void setTemp(Double temp) {
+    public void setTemp(int temp) {
         this.temp = temp;
     }
 
@@ -40,17 +48,6 @@ public class Weather {
         this.shortDescription = shortDescription;
     }
 
-
-    public Weather() {
-
-
-    }
-    public Weather(int id, String townName, Double temp, String shortDescription) {
-        id = this.id;
-        townName = this.townName;
-        temp = this.temp;
-        shortDescription = this.shortDescription;
-    }
 }
 
 

@@ -78,7 +78,16 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"/>
 
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5 Day Forecast"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:id="@+id/five_day_forecast_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
 
 
 </RelativeLayout>
