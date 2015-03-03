@@ -16,6 +16,7 @@
         android:textColor="@color/white"
         android:text="Town"
         android:textSize="120dp"
+        android:visibility="invisible"
         android:id="@+id/textView_town"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -27,6 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="38dp"
             android:text="Temp"
+            android:visibility="invisible"
             android:textColor="@color/white"
             android:id="@+id/textView2"
             android:textSize="260dp"
@@ -38,11 +40,11 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:id="@+id/imageView"
+            android:visibility="invisible"
             android:layout_below="@+id/textView2"
             android:minHeight="300px"
             android:minWidth="300px"
-            android:layout_centerHorizontal="true"
-            android:visibility="visible"/>
+            android:layout_centerHorizontal="true"/>
 
 
     <TextView
@@ -50,6 +52,7 @@
         android:layout_height="wrap_content"
         android:text="Updated"
         android:textColor="@color/white"
+        android:visibility="invisible"
         android:id="@+id/textView6"
         android:layout_above="@+id/textView4"
         android:textSize="20dp"
@@ -63,6 +66,7 @@
         android:textSize="80dp"
         android:textColor="@color/white"
         android:id="@+id/textView4"
+        android:visibility="invisible"
         android:layout_above="@+id/button"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="34dp"/>

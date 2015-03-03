@@ -73,7 +73,7 @@ public class MainActivity extends ActionBarActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getWeatherAndUpdateDisplay getweather = new getWeatherAndUpdateDisplay();
+                getWeatherAndUpdateMainDisplay getweather = new getWeatherAndUpdateMainDisplay();
                 getweather.execute();
             }
         });
@@ -81,7 +81,7 @@ public class MainActivity extends ActionBarActivity {
         mfiveDayForecastButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getWeatherAndUpdateDisplay getweather = new getWeatherAndUpdateDisplay();
+                getWeatherAndUpdateDisplayFiveDay getweather = new getWeatherAndUpdateDisplayFiveDay();
                 getweather.execute();
             }
         });
@@ -198,7 +198,7 @@ public class MainActivity extends ActionBarActivity {
     }*/
 
 
-    private class getWeatherAndUpdateDisplay extends AsyncTask<Void, Void, String> {
+    private class getWeatherAndUpdateMainDisplay extends AsyncTask<Void, Void, String> {
         String data;
         int temp;
         Double windSpeed;
@@ -214,7 +214,7 @@ public class MainActivity extends ActionBarActivity {
 
             WeatherHttpClient weatherHttpClient = new WeatherHttpClient();
             try {
-                data = weatherHttpClient.getWeatherData("Muncie");
+                data = weatherHttpClient.getWeatherData("weather?q=Muncie");
             } catch (Exception e) {
                 Log.v("ERROR", e.toString());
 
@@ -246,12 +246,17 @@ public class MainActivity extends ActionBarActivity {
         protected void onPostExecute(String result) {
 
             mTextView.setText(townName);
+            mTextView.setVisibility(View.VISIBLE);
             mTextView2.setText(String.valueOf(temp));
+            mTextView2.setVisibility(View.VISIBLE);
             //mTextView3.setText(windSpeed.toString());
             mTextView4.setText(weatherShortDescription);
+            mTextView4.setVisibility(View.VISIBLE);
             mTextView6.setText("Last updated: " + currentDateTimeString);
+            mTextView6.setVisibility(View.VISIBLE);
             //mTextView6.setText(windDirection.toString());
             Picasso.with(context).load(R.drawable.stormyweathericon).resize(300, 300).into(mImageView);
+            mImageView.setVisibility(View.VISIBLE);
 
         }
     }
@@ -270,7 +275,7 @@ public class MainActivity extends ActionBarActivity {
 
             WeatherHttpClient weatherHttpClient = new WeatherHttpClient();
             try {
-                data = weatherHttpClient.getWeatherData("Muncie");
+                data = weatherHttpClient.getWeatherData("daily?q=Muncie,US&cnt=5");
             } catch (Exception e) {
                 Log.v("ERROR", e.toString());
 
@@ -292,8 +297,6 @@ public class MainActivity extends ActionBarActivity {
                 Weather weather2 = new Weather(2, cityName, conversions.tempFromCelciusToFahrenheit(list.getJSONObject(2).getJSONObject("main").getDouble("temp")), list.getJSONObject(2).getJSONArray("weather").getJSONObject(0).getString("main"));
                 Weather weather3 = new Weather(3, cityName, conversions.tempFromCelciusToFahrenheit(list.getJSONObject(3).getJSONObject("main").getDouble("temp")), list.getJSONObject(3).getJSONArray("weather").getJSONObject(0).getString("main"));
                 Weather weather4 = new Weather(4, cityName, conversions.tempFromCelciusToFahrenheit(list.getJSONObject(4).getJSONObject("main").getDouble("temp")), list.getJSONObject(4).getJSONArray("weather").getJSONObject(0).getString("main"));
-                Weather weather5 = new Weather(5, cityName, conversions.tempFromCelciusToFahrenheit(list.getJSONObject(5).getJSONObject("main").getDouble("temp")), list.getJSONObject(5).getJSONArray("weather").getJSONObject(0).getString("main"));
-                Weather weather6 = new Weather(6, cityName, conversions.tempFromCelciusToFahrenheit(list.getJSONObject(6).getJSONObject("main").getDouble("temp")), list.getJSONObject(6).getJSONArray("weather").getJSONObject(0).getString("main"));
 
             } catch (JSONException e) {
                 e.printStackTrace();

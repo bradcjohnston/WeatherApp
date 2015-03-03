@@ -9,7 +9,7 @@ import java.net.URL;
 //TODO: Swap to Retrofit
 
 public class WeatherHttpClient {
-    private static String BASE_URL = "http://api.openweathermap.org/data/2.5/weather?q=";
+    private static String BASE_URL = "http://api.openweathermap.org/data/2.5/";
     private static String IMG_URL = "http://openweathermap.org/img/w/";
 
 
