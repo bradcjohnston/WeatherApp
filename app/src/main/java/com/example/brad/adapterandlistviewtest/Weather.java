@@ -3,25 +3,25 @@ package com.example.brad.adapterandlistviewtest;
 
 public class Weather {
 
-    private int id;
     private String townName;
-    private int temp;
+    private String temp;
     private String shortDescription;
 
-    public Weather(int id, String townName, int temp, String shortDescription) {
-        id = this.id;
-        townName = this.townName;
-        temp = this.temp;
-        shortDescription = this.shortDescription;
+    private int weatherImage;
 
-
-    }
-    public int getId() {
-        return id;
+    public Weather(String townName, String temp, String shortDescription, int weatherImage) {
+        this.townName = townName;
+        this.temp = temp;
+        this.shortDescription = shortDescription;
+        this.weatherImage = weatherImage;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Weather(String townName, String temp, String shortDescription) {
+        this.townName = townName;
+        this.temp = temp;
+        this.shortDescription = shortDescription;
+        this.weatherImage = 0;
+
     }
 
     public String getTownName() {
@@ -32,11 +32,11 @@ public class Weather {
         this.townName = townName;
     }
 
-    public int getTemp() {
+    public String getTemp() {
         return temp;
     }
 
-    public void setTemp(int temp) {
+    public void setTemp(String temp) {
         this.temp = temp;
     }
 
@@ -46,6 +46,14 @@ public class Weather {
 
     public void setShortDescription(String shortDescription) {
         this.shortDescription = shortDescription;
+    }
+
+    public int getWeatherImage() {
+          return weatherImage;
+    }
+
+    public void setWeatherImage(int weatherImage) {
+        this.weatherImage = weatherImage;
     }
 
 }

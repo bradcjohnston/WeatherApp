@@ -5,11 +5,11 @@ public class Conversions {
 
     public Conversions() {
     }
-    public int tempFromCelciusToFahrenheit(double temp) {
+    public String tempFromCelciusToFahrenheit(double temp) {
         double result;
         result = 9/5 * (temp - 273) + 32;
         int ret = (int) Math.round(result);
-        return ret;
+        return String.valueOf(ret);
     }
     public String windDirectionFromDegrees(double degrees) {
 

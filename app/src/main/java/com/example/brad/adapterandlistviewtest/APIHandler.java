@@ -1,12 +1,12 @@
-package com.example.brad.adapterandlistviewtest;
+/*package com.example.brad.adapterandlistviewtest;
 
 import android.util.Log;
 
 import retrofit.RestAdapter;
 
-/**
+*//**
  * Created by brad on 2/24/15.
- */
+ *//*
 public class APIHandler {
 
     private static final String API_URL = "http://api.openweathermap.org/data/2.5";
@@ -38,4 +38,4 @@ public class APIHandler {
     }
 
 
-}
+}*/
